@@ -1,0 +1,15 @@
+//Check whether a number is even or odd
+import java.util.Scanner;
+public class Week3_ps3 {
+    public static void main(String[] args){
+        Scanner sc =  new Scanner (System.in);
+        System.out.println("Enter a number : ");
+        int N = sc.nextInt();
+         
+        String r = N%2==0 ? "Even" : "Odd";
+         System.out.println(r);
+
+    }
+}
+// concept N%2==0
+// Can be done using if else or ternary operator 
