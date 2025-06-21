@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // Map to group by sorted key
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        for (String word : strs) {
+            // Convert word to char array, sort it, convert back to string
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+            String sortedKey = new String(chars);
+
+            // Group words by their sorted key
+            if (!map.containsKey(sortedKey)) {
+                map.put(sortedKey, new ArrayList<>());
+            }
+
+            map.get(sortedKey).add(word);
+        }
+
+        // Return all grouped lists
+        return new ArrayList<>(map.values());
+    }
+}
